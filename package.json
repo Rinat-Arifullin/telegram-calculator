@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "typescript": "tsc src/*.ts",
+    "compile": "tsc src/*.ts",
     "dev": "nodemon src/index.ts",
     "start": "node src/index.ts",
-    "build": "typescript && node src/index.js"
+    "build": "tsc src/*.ts && node src/index.js"
   },
   "keywords": [],
   "author": "",
