@@ -6,7 +6,7 @@ var ECommands;
     ECommands["Start"] = "/start";
     ECommands["Diana"] = "/diana";
     ECommands["Rinat"] = "/rinat";
-})(ECommands = exports.ECommands || (exports.ECommands = {}));
+})(ECommands || (exports.ECommands = ECommands = {}));
 exports.commands = [
     {
         command: ECommands.Start,

@@ -43,7 +43,7 @@ var ECallbacksRinat;
 (function (ECallbacksRinat) {
     ECallbacksRinat["Report"] = "/rinatReport";
     ECallbacksRinat["ChangeBalance"] = "/rinatChangeBalance";
-})(ECallbacksRinat = exports.ECallbacksRinat || (exports.ECallbacksRinat = {}));
+})(ECallbacksRinat || (exports.ECallbacksRinat = ECallbacksRinat = {}));
 exports.optionsRinat = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
@@ -104,14 +104,15 @@ var handlerChangeBalanceRinat = function (chatId, bot) { return __awaiter(void 0
             case 2:
                 _a.sent();
                 bot.on('message', function (msg) { return __awaiter(void 0, void 0, void 0, function () {
-                    var value, reason;
+                    var splitText, value, reason;
                     var _a;
                     return __generator(this, function (_b) {
                         switch (_b.label) {
                             case 0:
-                                if (!((_a = msg.text) === null || _a === void 0 ? void 0 : _a.split(",").length)) return [3 /*break*/, 3];
-                                value = Number(msg.text.split(",")[0]);
-                                reason = msg.text.split(",")[1];
+                                splitText = msg.text && ((_a = msg.text) === null || _a === void 0 ? void 0 : _a.split(","));
+                                if (!(splitText === null || splitText === void 0 ? void 0 : splitText.length)) return [3 /*break*/, 3];
+                                value = Number(splitText[0]);
+                                reason = splitText[1];
                                 return [4 /*yield*/, modules_1.default.create({
                                         value: value,
                                         reason: reason,

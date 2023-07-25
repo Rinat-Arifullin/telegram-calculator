@@ -42,7 +42,7 @@ var ECallbacksDiana;
 (function (ECallbacksDiana) {
     ECallbacksDiana["Report"] = "/dianaReport";
     ECallbacksDiana["ChangeBalance"] = "/dianaChangeBalance";
-})(ECallbacksDiana = exports.ECallbacksDiana || (exports.ECallbacksDiana = {}));
+})(ECallbacksDiana || (exports.ECallbacksDiana = ECallbacksDiana = {}));
 exports.optionsDiana = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
